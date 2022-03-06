@@ -22,9 +22,21 @@ from django.urls import path
 from django.urls.conf import include
 from django.views.generic.base import RedirectView
 
+from django.views.static import serve
+from django.conf.urls import url
+
+
+#from django.conf.urls import handler404, handler500
+from ourapp import views
+handler404= views.error404
+
+
 
 urlpatterns = [
+    url(r'^files/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}),
+    url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
+
     path('admin/', admin.site.urls),
     path("", RedirectView.as_view(url="/vista-gora/")),
     path("", include ("ourapp.urls")),
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
