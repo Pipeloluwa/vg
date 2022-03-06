@@ -39,4 +39,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("", RedirectView.as_view(url="/vista-gora/")),
     path("", include ("ourapp.urls")),
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
