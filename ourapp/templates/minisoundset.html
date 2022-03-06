@@ -1,0 +1,183 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" xmlns:og="http://www.w3.org/1999/xhtml">
+
+
+<head>
+
+	<!-- META ============================================= -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="keywords" content="" />
+	<meta name="author" content="" />
+	<meta name="robots" content="" />
+	
+	<!-- DESCRIPTION -->
+	<meta name="description" content="VISTAGORA"/>
+	
+	<!-- OG -->
+	<meta property="og:title" content="VISTAGORA" />
+	<meta property="og:description" content="VISTAGORA"/>
+	<meta property="og:image" content="" />
+	<meta name="format-detection" content="telephone=no">
+	
+	<!-- FAVICONS ICON ============================================= -->
+	<link rel="icon" href="{% static 'assets/images/favicon.ico" type="image/x-icon' %}" />
+	<link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/images/favicon.png' %}" />
+	
+	<!-- PAGE TITLE HERE ============================================= -->
+	<title>VISTAGORA</title>
+	
+	<!-- MOBILE SPECIFIC ============================================= -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!--[if lt IE 9]>
+	<script src="{% static 'assets/js/html5shiv.min.js' %}"></script>
+	<script src="{% static 'assets/js/respond.min.js' %}"></script>
+	<![endif]-->
+
+	<!-- All PLUGINS CSS ============================================= -->
+	<link rel="stylesheet" type="text/css" href="{% static 'assets/css/assets.css' %}">
+
+	<!-- TYPOGRAPHY ============================================= -->
+	<link rel="stylesheet" type="text/css" href="{% static 'assets/css/typography.css' %}">
+
+	<!-- SHORTCODES ============================================= -->
+	<link rel="stylesheet" type="text/css" href="{% static 'assets/css/shortcodes/shortcodes.css' %}">
+
+	<!-- STYLESHEETS ============================================= -->
+	<link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}">
+	<link class="skin" rel="stylesheet" type="text/css" href="{% static 'assets/css/color/color-1.css' %}">
+	
+</head>
+<body id="bg">
+<div class="page-wraper">
+	<div id="loading-icon-bx"></div>
+    <!-- Header Top ==== -->
+    <header class="header rs-nav">
+		<div class="sticky-header navbar-expand-lg">
+            <div class="menu-bar clearfix">
+                <div class="container clearfix">
+					<!-- Header Logo ==== -->
+					<div class="menu-logo">
+						<a href="{% url 'index' %}"><img src="{% static 'assets/images/logo.jpg'%}" alt=""></a>
+					</div>
+					<!-- Mobile Nav Button ==== -->
+
+					<!-- Author Nav ==== -->
+					<!-- Search Box ==== -->
+                    <div class="nav-search-bar">
+                        <form action="#">
+                            <input name="search" value="" type="text" class="form-control" placeholder="Type to search">
+                            <span><i class="ti-search"></i></span>
+                        </form>
+						<span id="search-remove"><i class="ti-close"></i></span>
+                    </div>
+					<!-- Navigation Menu ==== -->
+                    <div class="menu-links navbar-collapse collapse justify-content-start" id="menuDropdown">
+						<div class="menu-logo">
+							<a href="{% url 'index' %}"><img src="{% static 'assets/images/logo.jpg'%}" alt=""></a>
+						</div>
+                        <ul class="nav navbar-nav">
+							<li class="active"><a href="{% url 'index'  %}">Home</a>
+							</li>
+						</ul>
+					</div>
+
+					<!-- Navigation Menu END ==== -->
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header END ==== -->
+    <!-- Inner Content Box ==== -->
+    <div class="page-content bg-white">
+        <!-- Page Heading Box ==== -->
+        <div class="page-banner" style="background-image:url({% static 'assets/images/no8.png' %});">
+            <div class="container">
+                <div class="page-banner-entry">
+                    <h1 class="text-white">Mini Sound Set</h1>
+				 </div>
+            </div>
+        </div>
+		<div class="breadcrumb-row">
+			<div class="container">
+				<ul class="list-inline">
+					<li><a href="{% url 'index' %}">Home</a></li>
+					<li>Recording</li>
+				</ul>
+			</div>
+		</div>
+		<!-- Page Heading Box END ==== -->
+        <!-- Page Content Box ==== -->
+		<div class="content-block ">
+            <!-- About Us ==== -->
+
+			<div class="section-area section-sp1">
+                <div class="container">
+					 <div class="row">
+						 <div class="givepad">
+							 <h2 class="title-head ">MINI SOUND SET<br/> <span class="text-primary">Looking For a Quality Sound Set?</span></h2>
+								A mini sound set consist of a top speaker and a hanging speaker. It’s suitable for small parties of not more than a hundred people within the compound of the house. Two microphones are attached for the moderator of the event and for anyone who wants to speaker.
+								The basic price to rent a mini sound set is N 25,000. The price may increase depending on the location of the event.
+								Call us now on 09027931880 or <a href="mailto:soundcraftng@gmail.com">CLICK HERE</a> to send a mail to soundcraftng@gmail.com  to rent the sound system.
+						 </div>
+					</div>
+				</div>
+            </div>
+
+			<!-- About Us END ==== -->
+			<!-- Why Choose ==== -->
+
+			<!-- Company Stats END ==== -->
+			<!-- Our Story ==== -->
+
+        </div>
+		<!-- Page Content Box END ==== -->
+    </div>
+	<!-- Page Content Box END ==== -->
+	<!-- Footer ==== -->
+    <footer>
+        <div class="footer-top">
+
+            <div class="container">
+                <div class="row">
+					<div class="col-12 col-lg-5 col-md-7 col-sm-12">
+						<div class="row">
+							<div class="col-4 col-lg-4 col-md-4 col-sm-4">
+								<div class="widget footer_widget">
+									<h5 class="footer-title">Company</h5>
+									<ul>
+										<li><a href="{% url 'index' %}">Home</a></li>
+										<li><a href="{% url 'about' %}">About</a></li>
+										<li><a href="{% url 'contact'  %}">Message/Contact us</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer END ==== -->
+    <button class="back-to-top fa fa-chevron-up" ></button>
+</div>
+<!-- External JavaScripts -->
+<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+<script src="{% static 'assets/vendors/bootstrap/js/popper.min.js' %}"></script>
+<script src="{% static 'assets/vendors/bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'assets/vendors/bootstrap-select/bootstrap-select.min.js' %}"></script>
+<script src="{% static 'assets/vendors/bootstrap-touchspin/jquery.bootstrap-touchspin.js' %}"></script>
+<script src="{% static 'assets/vendors/magnific-popup/magnific-popup.js' %}"></script>
+<script src="{% static 'assets/vendors/counter/waypoints-min.js' %}"></script>
+<script src="{% static 'assets/vendors/counter/counterup.min.js' %}"></script>
+<script src="{% static 'assets/vendors/imagesloaded/imagesloaded.js' %}"></script>
+<script src="{% static 'assets/vendors/masonry/masonry.js' %}"></script>
+<script src="{% static 'assets/vendors/masonry/filter.js' %}"></script>
+<script src="{% static 'assets/vendors/owl-carousel/owl.carousel.js' %}"></script>
+<script src="{% static 'assets/js/functions.js' %}"></script>
+<script src="{% static 'assets/js/contact.js' %}"></script>
+</body>
+
+</html>
