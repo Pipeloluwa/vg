@@ -33,10 +33,10 @@ handler404= views.error404
 
 
 urlpatterns = [
-    url(r'^files/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}),
-    url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
-
     path('admin/', admin.site.urls),
     path("", RedirectView.as_view(url="/vista-gora/")),
     path("", include ("ourapp.urls")),
+
+    url(r'^files/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}),
+    url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
 ]

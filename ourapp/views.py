@@ -30,9 +30,7 @@ global keeprow3 #for the audio page
 keeprow,keeprow2,keeprow3= [],[],[]
 
 
-def error404(request, exception):
-    data= {}
-    return render(request, "404.html", data)
+
 
 def index(request):
     global former
@@ -73,6 +71,10 @@ def index(request):
         return render(request, "index1.html", {"sm":sm})
 
 
+
+def error404(request, exception):
+    data= {}
+    return render(request, "404.html", data)
 
 
 

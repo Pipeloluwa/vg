@@ -3,8 +3,8 @@ from django import urls
 from . import views
 
 urlpatterns= [
-    path("vista-gora/error-404", views.error404, name="error404"),
     path("vista-gora/", views.index, name="index"),
+    path("vista-gora/error-404", views.error404, name="error404"),
 
     path("vista-gora/audio-tracks/next-page/<int:nmbr>", views.npage, name="npage"),
     path("vista-gora/audio-tracks/previous-page/<int:nmbr>", views.ppage, name="ppage"),
@@ -36,12 +36,6 @@ urlpatterns= [
     path("vista-gora/search-course111/<str:tok>", views.search_course111, name="search_course111"),
     path("vista-gora/search-course1111/<str:tok>", views.search_course1111, name="search_course1111"),
 
-    # path("vista-gora/download-link/<str:title>/<str:id>", views.download, name="download"),
-    # path("vista-gora/download-link2/<str:title>/<str:id>", views.download2, name="download2"),
-    #
-    #
-    # path("vista-gora/make-payment/<str:id>",views.initiate_payment, name="initiate-payment"),
-    # path("vista-gora/<str:ref>/<str:id>/<str:us>", views.verify_payment, name="verify-payment"),
 ]
 
 
