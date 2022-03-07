@@ -53,23 +53,24 @@ def index(request):
             return render(request, "search_course11.html", {"tok": None, "cont": None, "ck": False})
 
 
-    sm=[]
-    nocr=0
-    lgic=len(Audio.objects.all())
-    for i in range (lgic):
-        if nocr==7:
-            break
-        rd=random.choice(Audio.objects.all())
-        if nocr==0:
-            sm.append(rd)
-            nocr += 1
-        if nocr!=0:
-            if rd not in sm:
+    else:
+        sm = []
+        nocr = 0
+        lgic = len(Audio.objects.all())
+        for i in range (lgic):
+            if nocr==7:
+                break
+            rd=random.choice(Audio.objects.all())
+            if nocr==0:
                 sm.append(rd)
                 nocr += 1
-            else:
-                lgic+=1
-    return render(request, "index1.html", {"sm":sm})
+            if nocr!=0:
+                if rd not in sm:
+                    sm.append(rd)
+                    nocr += 1
+                else:
+                    lgic+=1
+        return render(request, "index1.html", {"sm":sm})
 
 
 
