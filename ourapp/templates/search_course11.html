@@ -1,0 +1,203 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<!-- META ============================================= -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="keywords" content="" />
+	<meta name="author" content="" />
+	<meta name="robots" content="" />
+
+	<!-- DESCRIPTION -->
+	<meta name="description" content="Vistagora" />
+
+	<!-- OG -->
+	<meta property="og:title" content="Vistagora" />
+	<meta property="og:description" content="Vistagora" />
+	<meta property="og:image" content="" />
+	<meta name="format-detection" content="telephone=no">
+
+	<!-- FAVICONS ICON ============================================= -->
+	<link rel="icon" href="../error-404.html" type="image/x-icon" />
+	<link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/images/favicon.png' %}" />
+
+	<!-- PAGE TITLE HERE ============================================= -->
+	<title>VISTAGORA</title>
+
+	<!-- MOBILE SPECIFIC ============================================= -->
+	<meta name="viewport" content="width=device-width, initial-scale= 1">
+
+	<!--[if lt IE 9]>
+	<script src="{% static 'admin/assets/js/html5shiv.min.js' %}"></script>
+	<script src="{% static 'admin/assets/js/respond.min.js' %}"></script>
+	<![endif]-->
+
+	<!-- All PLUGINS CSS ============================================= -->
+	<link rel="stylesheet" type="text/css" href="{% static 'admin/assets/css/assets.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'admin/assets/vendors/calendar/fullcalendar.css' %}">
+
+	<!-- TYPOGRAPHY ============================================= -->
+	<link rel="stylesheet" type="text/css" href="{% static 'admin/assets/css/typography.css' %}">
+
+	<!-- SHORTCODES ============================================= -->
+	<link rel="stylesheet" type="text/css" href="{% static 'admin/assets/css/shortcodes/shortcodes.css' %}">
+
+	<!-- STYLESHEETS ============================================= -->
+	<link rel="stylesheet" type="text/css" href="{% static 'admin/assets/css/style.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'admin/assets/css/dashboard.css' %}">
+	<link class="skin" rel="stylesheet" type="text/css" href="{% static 'admin/assets/css/color/color-1.css' %}">
+
+</head>
+
+
+<body class="ttr-opened-sidebar ttr-pinned-sidebar">
+	<!-- header start -->
+	<header class="ttr-header">
+		<div class="ttr-header-wrapper">
+			<!--sidebar menu toggler start -->
+			<div class="ttr-toggle-sidebar ttr-material-button">
+				<i class="ti-close ttr-open-icon"></i>
+				<i class="ti-menu ttr-close-icon"></i>
+			</div>
+			<!--sidebar menu toggler end -->
+			<!--logo start -->
+			<div class="ttr-logo-box">
+				<div>
+					<a href="{% url 'index' %}" class="ttr-logo">
+						<img class="ttr-logo-mobile" alt="" src="{% static 'admin/assets/images/logo.png' %}" width="30" height="30">
+						<img class="ttr-logo-desktop" alt="" src="{% static 'admin/assets/images/logo-white.png' %}" width="160" height="27">
+					</a>
+				</div>
+			</div>
+			<!--logo end -->
+			<div>
+				<!-- header left menu start -->
+
+				<!-- header left menu end -->
+			</div>
+
+			<div class="ttr-header-right ttr-with-seperator">
+				<!-- header right menu start -->
+				<ul class="ttr-header-navigation">
+					<li>
+						<a href="#" class="ttr-material-button ttr-search-toggle"><i class="fa fa-search"> Search Song</i></a>
+					</li>
+				</ul>
+				<!-- header right menu end -->
+			</div>
+
+			<div class="ttr-search-bar">
+				<form action="{% url 'search_course11' tok %}" method="POST" class="ttr-search-form">
+					{% csrf_token %}
+					<div class="ttr-search-input-wrapper">
+						<input type="text" name="qq" required placeholder="search something..." class="ttr-search-input">
+						<button type="submit" name="search" class="ttr-search-submit"><i class="ti-arrow-right"></i></button>
+					</div>
+					<span class="ttr-search-close ttr-search-toggle">
+						<i class="ti-close"></i>
+					</span>
+				</form>
+			</div>
+
+			<!--header search panel start -->
+		</div>
+	</header>
+	<!-- header end -->
+	<!-- Left sidebar menu start -->
+	<!--Main container start -->
+	<h6 class="ttr-wrapper">
+		<h2></h2>
+		<div class="container-fluid">
+			<div class="db-breadcrumb">
+				<h4 class="breadcrumb-title">NOTE: search accurately with respect to spaces</h4>
+				<ul class="db-breadcrumb-list">
+					<li><a href="{% url 'index' %}"><i class="fa fa-home"></i>Go Back Home</a></li>
+				</ul>
+			</div>
+		</div>
+
+	</h6>
+
+	<div >
+		{% if got2 %}
+			{% for i in got %}
+				{% if i.identification_code in got2 %}
+					<ul>
+						<div class="card-courses-list admin-courses">
+							<div class="card-courses-media">
+								<img src="{{i.cover_picture.url}}" alt=""/>
+							</div>
+
+
+
+
+							<div class="card-courses-full-dec givepad">
+								<div class="card-courses-title">
+									<audio controls controlsList="nodownload" loop autoplay="true">
+									   <source src="{{i.audio_file.url}}" type="audio/mpeg" class="givepad centerad">
+										<source src="{{i.audio_file.url}}" type="audio/ogg" class="givepad centerad">
+										<source src="{{i.audio_file.url}}" type="audio/wav" class="givepad centerad">
+										Your Browser does not support the HTML5 audio element
+									</audio>
+									<h4><span><h5 class="text-primary">TITLE: {{i.title}}</h5></span></h4>
+									<h4><span><h5 class="text-primary">ARTISTE: {{i.artiste}}</h5></span></h4>
+								</div>
+
+								<div class="row card-courses-dec">
+									<div class="col-md-12">
+										<h4><span><h5 class="text-primary">DESCRIPTION <p>{{i.description}}</p></h5></span></h4>
+									</div>
+								</div>
+
+
+							</div>
+						</div>
+					</ul>
+				{% endif %}
+			{% endfor%}
+		{% endif %}
+
+		{% if ck %}
+					<ul>
+						<div class="card-courses-list admin-courses">
+							<div class="card-courses-media">
+								<img src="{{got.cover_picture.url}}" alt=""/>
+							</div>
+
+
+
+
+
+							<div class="card-courses-full-dec givepad">
+								<div class="card-courses-title">
+									<audio controls controlsList="nodownload" contenteditable="false" autoplay loop>
+									   <source src="{{got.audio_file.url}}" type="audio/mpeg" class="givepad centerad">
+										Your Browser does not support the audio element
+									</audio>
+									<h4><span><h5 class="text-primary bgsong">TITLE: {{got.title}}</h5></span></h4>
+									<h4><span><h5 class="text-primary">ARTISTE: {{got.artiste}}</h5></span></h4>
+								</div>
+
+								<div class="row card-courses-dec">
+									<div class="col-md-12">
+										<h4><span><h5 class="text-primary">DESCRIPTION <p>{{got.description}}</p></h5></span></h4>
+									</div>
+								</div>
+
+
+							</div>
+						</div>
+					</ul>
+
+		{% else %}
+			{% if not got2 %}
+				<h4 class="center">No Result Found</h4>
+			{% endif %}
+		{% endif %}
+
+
+
+</body>
+</html>
