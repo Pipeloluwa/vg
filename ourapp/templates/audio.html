@@ -57,7 +57,7 @@
 </head>
 <body id="bg">
 <div class="page-wraper">
-<div id="loading-icon-bx"></div>
+<!--<div id="loading-icon-bx"></div>-->
 	<!-- Header Top ==== -->
    <header class="header rs-nav header-transparent">
 
@@ -66,7 +66,7 @@
                 <div class="container clearfix">
 					<!-- Header Logo ==== -->
 					<div class="menu-logo">
-						<a href="{% url 'index' %}"><img src="{% static 'assets/images/logo-white.jpg' %}" alt=""></a>
+						<a href="{% url 'index' %}"><img src="{% static 'assets/images/logo-white.png' %}" alt=""></a>
 					</div>
 					<!-- Mobile Nav Button ==== -->
                     <button class="navbar-toggler collapsed menuicon justify-content-end" type="button" data-toggle="collapse" data-target="#menuDropdown" aria-controls="menuDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -80,7 +80,7 @@
 					<!-- Navigation Menu ==== -->
                     <div class="menu-links navbar-collapse collapse justify-content-start" id="menuDropdown">
 						<div class="menu-logo">
-							<a href="{% url 'index' %}"><img src="{% static 'assets/images/logo.jpg' %}" alt=""></a>
+							<a href="{% url 'index' %}"><img src="{% static 'assets/images/logo.png' %}" alt=""></a>
 						</div>
                         <ul class="nav navbar-nav">	
 							<li class="active"><a href="{% url 'index' %}"><p>Home</p></a></li>
@@ -97,6 +97,11 @@
     <div class="page-content bg-white">
         <!-- inner page banner -->
         <div class="page-banner" style="background-image:url({% static 'assets/images/bgp2.jpg' %});">
+			 <div class="container">
+                <div class="page-banner-entry">
+                    <h1 class="text-white">Audio Tracks</h1>
+				 </div>
+            </div>
         </div>
 		<!-- Breadcrumb row -->
 		<div class="breadcrumb-row">
@@ -143,7 +148,7 @@
 											<div class="col-md-6 col-lg-4 col-sm-6 m-b30">
 												<div class="cours-bx">
 													<div class="action-box">
-														<div class="card-courses-media middle">
+														<div class="">
 															<img src="{{row.cover_picture.url}}" alt="">
 														</div>
 														<a href="{% url 'search_course11' row.identification_code %}" class="btn">Play Song</a>

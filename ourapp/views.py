@@ -68,7 +68,10 @@ def index(request):
                     nocr += 1
                 else:
                     lgic+=1
-        return render(request, "index1.html", {"sm":sm})
+
+        if sm:
+            return render(request, "index1.html", {"sm":sm, "ca":True})
+        return render(request, "index1.html", {"sm":sm, "ca":False})
 
 
 
