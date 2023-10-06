@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-go%*ve54^&&dc=h)va!vsh$=n(2kojg=o4bsk1t#yp@hpgmp)1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["127.0.0.1", "vistagora.herokuapp.com"]
+ALLOWED_HOSTS = ["127.0.0.1", "vistagora.herokuapp.com", "vistagora.onrender.com"]
 
 
 # Application definition
